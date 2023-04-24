@@ -99,8 +99,7 @@ button {
   color: #333;
 }
 
-/* New Task */
-.task_new .task__title{
+.task_new .task__title {
   display: block;
   margin: 0 0 20px;
 }
