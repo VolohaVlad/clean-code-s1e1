@@ -21,14 +21,16 @@ const createNewTaskElement = function (taskString) {
   const deleteButton = document.createElement("button");
   const deleteButtonImg = document.createElement("img");
 
+  listItem.classList.add("task__item");
+
   label.innerText = taskString;
-  label.classList.add("item__label");
+  label.classList.add("task__label");
 
   checkBox.type = "checkbox";
-  checkBox.classList.add("item__checkbox");
+  checkBox.classList.add("task__checkbox");
 
   editInput.type = "text";
-  editInput.classList.add("item__input");
+  editInput.classList.add("task__input");
 
   editButton.innerText = "Edit";
   editButton.classList.add("task__btn", "btn", "task__btn_edit");
@@ -68,8 +70,8 @@ const editTask = function () {
 
   const listItem = this.parentNode;
 
-  const editInput = listItem.querySelector(".item__input");
-  const label = listItem.querySelector(".item__label");
+  const editInput = listItem.querySelector(".task__input");
+  const label = listItem.querySelector(".task__label");
   const editBtn = listItem.querySelector(".task__btn_edit");
   const containsClass = listItem.classList.contains("task_item--edit");
   //If class of the parent is .editmode
@@ -131,7 +133,7 @@ addButton.addEventListener("click", ajaxRequest);
 const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   console.log("bind list item events");
   //select ListItems children
-  const checkBox = taskListItem.querySelector(".item__checkbox");
+  const checkBox = taskListItem.querySelector(".task__checkbox");
   const editButton = taskListItem.querySelector(".task__btn_edit");
   const deleteButton = taskListItem.querySelector(".task__btn_delete");
 
